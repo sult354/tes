@@ -45,10 +45,15 @@ const { exec } = require('child_process')
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 const { start, waiting, close, success } = require('./action/other/function') 
-const { chalk, color, bgcolor, ConsoleLog, biocolor } = require('./action/other/color')  
-const ftroli ={key: {fromMe: false,"participant":"0@s.whatsapp.net",   "remoteJid": "6289523258649-1604595598@g.us"  }, "message": {orderMessage: {itemCount: 10,status: 200, thumbnail: fs.readFileSync(`./storage/image/thumb.jpg`), surface: 200, message: `)-----[XM BOT]-----(`, orderTitle: 'LordRifza', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}       
+const { chalk, color, bgcolor, ConsoleLog, biocolor } = require('./action/other/color')
+  
+const ftroli ={key: {fromMe: false,"participant":"0@s.whatsapp.net",   "remoteJid": "6289523258649-1604595598@g.us"  }, "message": {orderMessage: {itemCount: 10,status: 200, thumbnail: fs.readFileSync(`./storage/image/thumb.jpg`), surface: 200, message: `)-----[XM BOT]-----(`, orderTitle: 'LordRifza', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
+       
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-const sleep = async (ms) => {return new Promise(resolve => setTimeout(resolve, ms))}   
+const sleep = async (ms) => {
+return new Promise(resolve => setTimeout(resolve, ms))
+}
+   
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 require('./xm.js')
 nocache('./xm.js', module => console.log(color(`New`, 'red'), color(`${module} is now updated!`, 'teal')))
@@ -73,20 +78,24 @@ CFonts.say(`@rifza.p.p`, {
   align: 'center',
   gradient: ['red', 'magenta']
 })
-rifza.browserDescription = [ 'XMOODS', 'Aloha', '5.4' ]    
+rifza.browserDescription = [ 'XMOODS', 'Aloha', '5.4' ]
+    
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->   
 rifza.on('qr', () => { 
-console.log(color('[','white'), color('!','red'), color(']','white'), color(' Scan kak')) })      
+console.log(color('[','white'), color('!','red'), color(']','white'), color(' Scan kak')) })
+      
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->   
 fs.existsSync('./qrcode.json') && rifza.loadAuthInfo('./qrcode.json')
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 rifza.on('connecting', () => {
-start('2', 'Mengkoneksikan ke WhatsApp_Web...')})
+start('2', 'Mengkoneksikan ke WhatsApp_Web...')
+})
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 rifza.on('open', () => {
 success('2', 'Tersambung✔️')
 setTimeout( () => {
-}, 1500)})
+}, 1500)
+})
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 await rifza.connect({timeoutMs: 30*1000})
 fs.writeFileSync('./qrcode.json', JSON.stringify(rifza.base64EncodedAuthInfo(), null, '\t'))
@@ -106,19 +115,21 @@ footerText: `©Created by Rifza` ,
 buttons: buttonss,
 headerType: 1
 }
-rifza.sendMessage(`6287708357324@s.whatsapp.net`,  buttonMessagee, MessageType.buttonsMessage,{
+rifza.sendMessage(`6282322350815@s.whatsapp.net`,  buttonMessagee, MessageType.buttonsMessage,{
         caption: '[ • XMOODS • ]',
         "contextInfo": {
             text: 'hi',
             "forwardingScore": 1000000000,
             isForwarded: true,
-            sendEphemeral: true,         
+            sendEphemeral: true,
+         
             },
 			quoted: ftroli,sendEphemeral: true 
 			})
     rifza.on('ws-close', () => {
         console.log(ConsoleLog('Koneksi terputus, mencoba mengkoneksikan ulang..'))
-    }) 
+    })
+ 
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 rifza.on('CB:action,,battery', json => {
 global.batteryLevelStr = json[2][0][1].value
