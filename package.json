@@ -1,7 +1,7 @@
 {
-  "name": "Rifza",
+  "name": "Sulthon Gans",
   "version": "1.0.0",
-  "description": "X-M•WhatsAppNodejs • By_Rifza",
+  "description": "X-M•WhatsAppNodejs • By_Sulthon",
   "main": "start.js",
   "directories": {
     "lib": "lib"
@@ -17,7 +17,7 @@
     "whatsapp",
     "bot"
   ],
-  "author": "Rifza",
+  "author": "Sulthon Gans",
   "license": "ISC",
   "dependencies": {
     "@adiwajshing/baileys": "^3.5.2",
